@@ -7,12 +7,24 @@ const personalMovieDB = {
   genres: [],
   private: false,
 }
+if (personalMovieDB.count < 0) {
+  alert('Произошла ошибка')
+} else if (personalMovieDB.count < 10) {
+  console.log('Просмотрено довольно мало фильмов')
+} else if (personalMovieDB.count < 30) {
+  console.log('Вы классический зритель')
+} else console.log('Вы киноман!')
 
-const a = prompt('Один из последних просмотренных фильма?', '')
-const b = prompt('На сколько оцениваете этот фильм?', '')
-const c = prompt('Один из последних просмотренных фильма?', '')
-const d = prompt('На сколько оцениваете этот фильм?', '')
-
-personalMovieDB.movies[a] = b
-personalMovieDB.movies[c] = d
+if (numberofFilms > 0) {
+  for (let i = 0; i < numberofFilms; ) {
+    const film = prompt('Один из последних просмотренных фильма?', '')
+    const mark = +prompt('На сколько оцениваете этот фильм?', '')
+    if (!film || film.length > 50) {
+      i--
+    } else {
+      personalMovieDB.movies[film] = mark
+      i++
+    }
+  }
+}
 console.log(personalMovieDB)

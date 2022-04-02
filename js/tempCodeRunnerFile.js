@@ -1,3 +1,3 @@
-// "use strict"
-a = 15
-console.log(a)
+const num = '12.6px'
+console.log(parseInt(num))
+console.log(parseFloat(num))

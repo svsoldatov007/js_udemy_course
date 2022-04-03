@@ -1,3 +1,15 @@
-const num = '12.6px'
-console.log(parseInt(num))
-console.log(parseFloat(num))
+const soldier = {
+  health: 400,
+  armor: 100,
+  sayHello: function() {
+    console.log('Hello!')
+  }
+}
+
+const jonh = {
+  health: 100
+}
+
+// устаревший формат
+jonh.__proto__ = soldier
+jonh.sayHello()
